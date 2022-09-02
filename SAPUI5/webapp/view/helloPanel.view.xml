@@ -1,0 +1,18 @@
+<mvc:View controllerName="dtt.SAPUI5.controller.helloPanel" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:core="sap.ui.core"> 
+
+            <Panel id="_IDGenPanel1" headerText="{i18n>helloPanel}" class="sapUiResponsiveMargin" width="auto">
+            <content>
+            
+            <Button id="_IDGenButton1" text="{i18n>showHelloButtonText}" press=".onShowHello" class="sapUiSmallMarginEnd"> 
+            </Button>
+            <Input id="_IDGenInput1" value="{/recipient/name}" 
+                   
+                    valueLiveUpdate="true"
+                    width="60%" > 
+            </Input>
+            <Text id="_IDGenText1" text="hello{/recipient/name}" class="sapUiSmallMargin boldElements themeHighlight-asColor"/> 
+            </content>
+            </Panel>
+            <core:Fragment fragmentName="dtt.SAPUI5.view.Form01" type="XML">
+            </core:Fragment>
+</mvc:View>
