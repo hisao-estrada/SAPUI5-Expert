@@ -3,8 +3,12 @@
     <App id="_IDGenApp1">
         <pages> 
             <Page id="_IDGenPage1" title="{i18n>appTitle}">
+            <headerContent>
+                <Button id="HelloDialogHeader" icon="sap-icon://action" press=".onOpenDialogHeader" class="sapUiSmallMarginEnd"/>
+            </headerContent>
             <content>
              <mvc:XMLView id="_IDGenXMLView1" viewName="dtt.SAPUI5.view.helloPanel"> </mvc:XMLView>
+             <mvc:XMLView id="_IDGenXMLView2" viewName="dtt.SAPUI5.view.InvoicesList"> </mvc:XMLView>
             </content>
         </Page> 
         </pages>

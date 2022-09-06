@@ -14,12 +14,13 @@ sap.ui.define([
      */
     function (Controller ) {
         return Controller.extend("dtt.SAPUI5.controller.App", {
-
-            
             onInit: function() {
                 // var i18nModel = new ResourceModel({bundleName:"dtt.SAPUI5.i18n.i18n"})
                 // this.getView().setModel(i18nModel, "i18n")
                 // this.getView().setModel(Models.createRecipient())
+            },
+            onOpenDialogHeader: function () {
+                this.getOwnerComponent().openHelloDialog();
             }
             // onShowHello: function() {
             //     var oBundle = this.getView().getModel("i18n").getResourceBundle()

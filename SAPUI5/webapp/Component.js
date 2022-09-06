@@ -5,7 +5,9 @@ sap.ui.define([
     //"sap/ui/model/json/JSONModel"
     "dtt/SAPUI5/model/Models",
     "sap/ui/model/resource/ResourceModel",
-    "sap/ui/core/UIComponent"
+    "sap/ui/core/UIComponent",
+    "./controller/HelloDialog"
+
 ],
     /**
      * @param{typeof dtt.SAPUI5.model.Models} Models
@@ -13,7 +15,7 @@ sap.ui.define([
      *  @param{typeof sap.ui.core.UIComponent} UIComponent
      * */
 
-     function(Models, ResourceModel, UIComponent) {
+     function(Models, ResourceModel, UIComponent, HelloDialog) {
          return UIComponent.extend("dtt.SAPUI5.Component", {
              metadata: {
                 manifest: "json"
@@ -23,6 +25,15 @@ sap.ui.define([
                     this.setModel(Models.createRecipient())
                     var i18nModel = new ResourceModel({bundleName:"dtt.SAPUI5.i18n.i18n"})
                     this.setModel(i18nModel, "i18n")
+                    this._helloDialog = new HelloDialog(this.getRootControl());
+             },
+             exit:function() {
+                 this._helloDialog.destroy()
+                 delete this._helloDialog
+                 
+             },
+             openHelloDialog:function () {
+                 this._helloDialog.open()
              }
          })
      }
